@@ -6,7 +6,7 @@ export default (api) => {
             schema(joi) {
                 return joi
                     .string()
-                    .not('src', 'public', 'pages', 'mock', 'config')
+                    .not('src', 'public', 'pages', 'config')
                     .allow('');
             }
         }

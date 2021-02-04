@@ -11,7 +11,7 @@ export default (api) => {
                         modules: joi.alternatives(
                             joi.boolean(),
                             joi.string(),
-                            joi.object(),
+                            joi.object()
                         ),
                         sourceMap: joi.boolean(),
                         importLoaders: joi.number(),
@@ -24,11 +24,11 @@ export default (api) => {
                                 'camelCase',
                                 'camelCaseOnly',
                                 'dashes',
-                                'dashesOnly',
+                                'dashesOnly'
                             )
                     })
                     .description(
-                        'more css-loader options see https://webpack.js.org/loaders/css-loader/#options',
+                        'more css-loader options see https://webpack.js.org/loaders/css-loader/#options'
                     );
             }
         }

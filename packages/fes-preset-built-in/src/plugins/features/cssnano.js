@@ -1,7 +1,7 @@
 
 export default (api) => {
     api.describe({
-    // https://cssnano.co/optimisations/
+        // https://cssnano.co/optimisations/
         key: 'cssnano',
         config: {
             default: {

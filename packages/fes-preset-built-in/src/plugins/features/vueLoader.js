@@ -8,7 +8,7 @@ export default (api) => {
                 return joi
                     .object({})
                     .description(
-                        'more vue-loader options see https://vue-loader.vuejs.org/',
+                        'more vue-loader options see https://vue-loader.vuejs.org/'
                     );
             }
         }
