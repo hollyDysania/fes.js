@@ -25,8 +25,6 @@ import {
     access, useAccess, useRouter, useI18n, locale, enums
 } from '@webank/fes';
 
-console.log(__DEV__);
-
 export default {
     setup() {
         const fes = ref('fes upgrade to vue3');

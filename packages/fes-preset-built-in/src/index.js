@@ -11,6 +11,7 @@ export default function () {
             require.resolve('./plugins/generateFiles/fes'),
 
             // bundle configs
+            require.resolve('./plugins/features/entrys'),
             require.resolve('./plugins/features/alias'),
             require.resolve('./plugins/features/analyze'),
             require.resolve('./plugins/features/autoprefixer'),
@@ -47,6 +48,7 @@ export default function () {
             require.resolve('./plugins/features/terserOptions'),
             require.resolve('./plugins/features/vueLoader'),
             require.resolve('./plugins/features/hardSource'),
+
 
             // misc
             require.resolve('./plugins/misc/route'),

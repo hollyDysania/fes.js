@@ -114,9 +114,7 @@ export default class Service extends EventEmitter {
             env: this.env
         });
 
-        this.program = new Command();
-
-        this.initCommand();
+        this.program = this.initCommand();
 
         // setup initial plugins
         const baseOpts = {
@@ -487,10 +485,12 @@ export default class Service extends EventEmitter {
     }
 
     initCommand() {
-        this.program
+        const program = new Command();
+        program
             .usage('<command> [options]')
             .version(`@webank/fes ${this.fesPkg.version}`, '-v, --vers', 'output the current version')
             .description(chalk.cyan('一个好用的前端应用解决方案'));
+        return program;
     }
 
     parseCommand() {
