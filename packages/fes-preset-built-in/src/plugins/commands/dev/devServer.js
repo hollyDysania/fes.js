@@ -4,7 +4,7 @@ import fs from 'fs';
 import path from 'path';
 
 
-export function startDevServer({
+export async function startDevServer({
     webpackConfig,
     host,
     port,
@@ -15,25 +15,23 @@ export function startDevServer({
     customerDevServerConfig
 }) {
     const options = {
-        contentBase: webpackConfig.output.path,
         hot: true,
         host,
-        sockHost: host,
-        sockPort: port,
+        port,
         proxy,
-        compress: true,
-        noInfo: true,
-        disableHostCheck: true,
-        clientLogLevel: 'silent',
-        stats: 'errors-only',
-        before: (app) => {
+        allowedHosts: 'all',
+        static: webpackConfig.output.path,
+        devMiddleware: {
+            stats: 'errors-only'
+        },
+        onBeforeSetupMiddleware: (devServer) => {
             beforeMiddlewares.forEach((middleware) => {
-                app.use(middleware);
+                devServer.app.use(middleware);
             });
         },
-        after: (app) => {
+        onAfterSetupMiddleware: (devServer) => {
             afterMiddlewares.forEach((middleware) => {
-                app.use(middleware);
+                devServer.app.use(middleware);
             });
         },
         headers: {
@@ -42,18 +40,15 @@ export function startDevServer({
         ...(customerDevServerConfig || {})
     };
     if (https) {
-        options.https = true;
-        options.key = fs.readFileSync(path.resolve(__dirname, './cert/key.pem'));
-        options.cert = fs.readFileSync(path.resolve(__dirname, './cert/cert.pem'));
+        options.https = {
+            key: fs.readFileSync(path.resolve(__dirname, './cert/key.pem')),
+            cert: fs.readFileSync(path.resolve(__dirname, './cert/cert.pem'))
+        };
     }
-    WebpackDevServer.addDevServerEntrypoints(webpackConfig, options);
     const compiler = webpack(webpackConfig);
-    const server = new WebpackDevServer(compiler, options);
+    const server = new WebpackDevServer(options, compiler);
 
-    server.listen(port, host, (err) => {
-        if (err) {
-            console.error(err);
-        }
-    });
+    await server.start();
+
     return server;
 }

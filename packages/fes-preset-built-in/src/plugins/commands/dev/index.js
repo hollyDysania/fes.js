@@ -21,7 +21,7 @@ export default (api) => {
         for (const unwatch of unwatchs) {
             unwatch();
         }
-        server?.close();
+        server?.stop();
     }
 
     api.registerCommand({
@@ -170,7 +170,7 @@ export default (api) => {
                 args: {}
             });
             const { startDevServer } = require('./devServer');
-            server = startDevServer({
+            server = await startDevServer({
                 webpackConfig: bundleConfig,
                 host: hostname,
                 port,

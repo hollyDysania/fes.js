@@ -72,7 +72,15 @@ export default async function getConfig({
 }) {
     const isDev = env === 'development';
     const isProd = env === 'production';
-    const webpackConfig = new Config();
+    const webpackConfig = new Config({
+        target: 'web',
+        infrastructureLogging: {
+            level: 'error'
+        },
+        output: {
+            assetModuleFilename: 'static/[name][hash:8][ext]'
+        }
+    });
     const absoluteOutput = join(cwd, config.outputPath || 'dist');
 
     webpackConfig.mode(env);
@@ -113,48 +121,28 @@ export default async function getConfig({
     webpackConfig.module
         .rule('image')
         .test(/\.(png|jpe?g|gif|webp|ico)(\?.*)?$/)
-        .use('url-loader')
-        .loader(require.resolve('url-loader'))
-        .options({
-            limit: config.inlineLimit || 8192,
-            esModule: false,
-            fallback: {
-                loader: require.resolve('file-loader'),
-                options: {
-                    name: 'static/[name].[hash:8].[ext]',
-                    esModule: false
-                }
+        .type('asset')
+        .parser({
+            dataUrlCondition: {
+                maxSize: 8 * 1024
             }
         });
 
     webpackConfig.module
         .rule('svg')
         .test(/\.(svg)(\?.*)?$/)
-        .use('file-loader')
-        .loader(require.resolve('file-loader'))
-        .options({
-            name: 'static/[name].[hash:8].[ext]',
-            esModule: false
-        });
+        .type('asset/resource');
 
+    // 'static/[name].[hash:8].[ext]'
     webpackConfig.module
         .rule('fonts')
         .test(/\.(eot|woff|woff2|ttf)(\?.*)?$/)
-        .use('file-loader')
-        .loader(require.resolve('file-loader'))
-        .options({
-            name: 'static/[name].[hash:8].[ext]',
-            esModule: false
-        });
+        .type('asset/resource');
 
     webpackConfig.module
-        .rule('raw')
+        .rule('text-file')
         .test(/\.(txt|text|md)$/)
-        .use('raw-loader')
-        .loader(require.resolve('raw-loader'))
-        .options({
-            esModule: false
-        });
+        .type('asset/source');
 
     const { targets, browserslist } = getTargetsAndBrowsersList({ config });
     const babelOpts = await getBabelOpts({
