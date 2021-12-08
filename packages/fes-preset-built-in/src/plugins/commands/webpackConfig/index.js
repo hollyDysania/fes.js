@@ -57,7 +57,6 @@ function genTranspileDepRegex(exclude) {
     return deps.length ? new RegExp(deps.join('|')) : null;
 }
 
-
 export default async function getConfig({
     api,
     cwd,
