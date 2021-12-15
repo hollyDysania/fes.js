@@ -71,15 +71,7 @@ export default async function getConfig({
 }) {
     const isDev = env === 'development';
     const isProd = env === 'production';
-    const webpackConfig = new Config({
-        target: 'web',
-        infrastructureLogging: {
-            level: 'error'
-        },
-        output: {
-            assetModuleFilename: 'static/[name][hash:8][ext]'
-        }
-    });
+    const webpackConfig = new Config({});
     const absoluteOutput = join(cwd, config.outputPath || 'dist');
 
     webpackConfig.mode(env);
@@ -102,7 +94,7 @@ export default async function getConfig({
     // --------------- output -----------
     webpackConfig.output
         .path(absoluteOutput)
-        .publicPath(publicPath)
+        .publicPath(publicPath || '/')
         .filename('[name].[contenthash:8].js')
         .chunkFilename('[name].[contenthash:8].chunk.js');
 
@@ -290,10 +282,6 @@ export default async function getConfig({
         .plugin('progress')
         .use(require.resolve('webpackbar'));
 
-    webpackConfig
-        .plugin('friendly-errors')
-        .use(require('@soda/friendly-errors-webpack-plugin'));
-
     // --------------- chainwebpack -----------
     if (chainWebpack) {
         await chainWebpack(webpackConfig, {
@@ -310,5 +298,14 @@ export default async function getConfig({
         });
     }
 
-    return webpackConfig.toConfig();
+    const memo = webpackConfig.toConfig();
+    memo.infrastructureLogging = {
+        ...memo.infrastructureLogging,
+        level: 'verbose'
+    };
+    memo.output = {
+        ...memo.output,
+        assetModuleFilename: 'static/[name][hash:8][ext]'
+    };
+    return memo;
 }

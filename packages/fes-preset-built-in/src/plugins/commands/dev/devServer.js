@@ -20,7 +20,6 @@ export async function startDevServer({
         port,
         proxy,
         allowedHosts: 'all',
-        static: webpackConfig.output.path,
         devMiddleware: {
             stats: 'errors-only'
         },

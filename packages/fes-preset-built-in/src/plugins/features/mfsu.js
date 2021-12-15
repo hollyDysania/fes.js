@@ -1,4 +1,4 @@
-import MFSU from '@umijs/mfsu';
+import { MFSU } from '@umijs/mfsu';
 import webpack from 'webpack';
 
 export default (api) => {
@@ -38,6 +38,10 @@ export default (api) => {
         mfsu.setWebpackConfig({
             config
         });
+        config.experiments = {
+            ...config.experiments,
+            topLevelAwait: true
+        };
         return config;
     });
 };

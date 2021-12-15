@@ -8,7 +8,6 @@ export default {
         // __VUE_PROD_DEVTOOLS__: false
     },
     request: {
-        base: '/ras-mas',
         dataField: 'result'
     },
     html: {
@@ -33,5 +32,6 @@ export default {
     ],
     devServer: {
         port: 8000
-    }
+    },
+    mfsu: {}
 };

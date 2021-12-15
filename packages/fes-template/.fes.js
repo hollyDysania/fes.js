@@ -88,5 +88,6 @@ export default {
     ],
     monacoEditor: {
         languages: ['javascript', 'typescript', 'html', 'json']
-    }
+    },
+    mfsu: {}
 };

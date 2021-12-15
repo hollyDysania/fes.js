@@ -4,7 +4,8 @@
   "description": "fes 移动端项目模版",
   "scripts": {
     "prod": "FES_ENV=prod fes build",
-    "dev": "fes dev"
+    "dev": "fes dev",
+    "analyze": "ANALYZE=1 fes dev"
   },
   "keywords": [
     "管理端",
