@@ -2980,37 +2980,38 @@
   dependencies:
     "@types/yargs-parser" "*"
 
-"@umijs/bundler-esbuild@4.0.0-beta.12":
-  version "4.0.0-beta.12"
-  resolved "https://registry.npmmirror.com/@umijs/bundler-esbuild/download/@umijs/bundler-esbuild-4.0.0-beta.12.tgz#fe6ce493ac597fe494dcf7542832855081d6849b"
-  integrity sha512-NhEzeoiVFfgnu+Zo2HgKmT22vUM1Yw2TSox3deaQ/39n3sIGvowTUNrFBAPnL7mqUw7WzE+QRA1+NeSVz73vPw==
+"@umijs/bundler-esbuild@4.0.0-beta.13":
+  version "4.0.0-beta.13"
+  resolved "https://registry.npmmirror.com/@umijs/bundler-esbuild/download/@umijs/bundler-esbuild-4.0.0-beta.13.tgz#9d005dfb0cb497dfb032cec267df87322bb93339"
+  integrity sha512-XR2+dQ1sfBLMuJKvjp1PAFv6CTrZzLx3v4fZMT6RoJLwgEQDAC2fEWLFNBy2CV51Uh8tUuamzgV3DG3cx5b8Gg==
   dependencies:
-    "@umijs/bundler-utils" "4.0.0-beta.12"
-    "@umijs/utils" "4.0.0-beta.12"
+    "@umijs/bundler-utils" "4.0.0-beta.13"
+    "@umijs/utils" "4.0.0-beta.13"
     enhanced-resolve "5.8.3"
     less "4.1.2"
+    less-plugin-aliases "^1.0.3"
 
-"@umijs/bundler-utils@4.0.0-beta.12":
-  version "4.0.0-beta.12"
-  resolved "https://registry.npmmirror.com/@umijs/bundler-utils/download/@umijs/bundler-utils-4.0.0-beta.12.tgz#e1dd917d5c50d95b73910a560ec0b4dd3d996c6b"
-  integrity sha512-tgPkknk0GttZQIY5xIkTZ4WUYgdpqwzURdREh27izYucQtwxNCT9M6iaFSdmsgXMhGZ/kZ3cH0IHsuNTuTLYjQ==
+"@umijs/bundler-utils@4.0.0-beta.13":
+  version "4.0.0-beta.13"
+  resolved "https://registry.npmmirror.com/@umijs/bundler-utils/download/@umijs/bundler-utils-4.0.0-beta.13.tgz#bc29befa74ba8f00918aaef64cea23290bd483b4"
+  integrity sha512-nXGPL/gYs4a4h2ResOfDUkGiWRDaL+kCypQF3WMqFUTQsn9zLJsBWroRe2dL2KLX/KSxuEkQsvKzKRCXGvzndQ==
   dependencies:
-    "@umijs/utils" "4.0.0-beta.12"
+    "@umijs/utils" "4.0.0-beta.13"
     esbuild "0.14.1"
 
-"@umijs/mfsu@^4.0.0-beta.12":
-  version "4.0.0-beta.12"
-  resolved "https://registry.npmmirror.com/@umijs/mfsu/download/@umijs/mfsu-4.0.0-beta.12.tgz#ab4351e9808e183ee3c764706bbea241a3064f54"
-  integrity sha512-HscQM9dkMwemc6TuGfZo2xD+a52wlJUsyIPbD+WUArQq9SlRlZB52DC2XzDhFJTQFtDscqOml7C9KPM5OGE2mA==
+"@umijs/mfsu@^4.0.0-beta.13":
+  version "4.0.0-beta.13"
+  resolved "https://registry.npmmirror.com/@umijs/mfsu/download/@umijs/mfsu-4.0.0-beta.13.tgz#3cfd37424760a5ee1bd5445e7bcfa844e53bb2d0"
+  integrity sha512-hBtyL3Xc6qleGYk1NXq43vhdMyJpT32SwPQ0Kmwm9Lb/Hf9fPAojdP864ovUkJj6wJMFOvAFAfVEdoMmtyxTpA==
   dependencies:
-    "@umijs/bundler-esbuild" "4.0.0-beta.12"
-    "@umijs/bundler-utils" "4.0.0-beta.12"
-    "@umijs/utils" "4.0.0-beta.12"
+    "@umijs/bundler-esbuild" "4.0.0-beta.13"
+    "@umijs/bundler-utils" "4.0.0-beta.13"
+    "@umijs/utils" "4.0.0-beta.13"
 
-"@umijs/utils@4.0.0-beta.12":
-  version "4.0.0-beta.12"
-  resolved "https://registry.npmmirror.com/@umijs/utils/download/@umijs/utils-4.0.0-beta.12.tgz#aaaccbed001a435d43f4ed3caa27783f2da862fa"
-  integrity sha512-t3xZQYV3MrQtAYznfNVwCndcgFNmZG0Hl6/SAl2g8FShRnkcFtBMbofp2+y63B7OqLPcUOAMgKkkVOBwQdhylA==
+"@umijs/utils@4.0.0-beta.13":
+  version "4.0.0-beta.13"
+  resolved "https://registry.npmmirror.com/@umijs/utils/download/@umijs/utils-4.0.0-beta.13.tgz#96776d64dc149236b788a396bb5324bb519f7f64"
+  integrity sha512-O8bNbhSXPa6VifrrzyfZvjbyHSeyuyljR9WsoQJeb2e+0LivmO96OBOVInjXiRaRfXSG/gYU9JdXzcl2HmUMGg==
   dependencies:
     chokidar "3.5.2"
     clipboardy "2.3.0"
@@ -8416,7 +8417,7 @@ json-stringify-safe@^5.0.1, json-stringify-safe@~5.0.1:
   resolved "https://registry.npmmirror.com/json-stringify-safe/download/json-stringify-safe-5.0.1.tgz#1296a2d58fd45f19a0f6ce01d65701e2c735b6eb"
   integrity sha1-Epai1Y/UXxmg9s4B1lcB4sc1tus=
 
-json5@2.x, json5@^2.1.2, json5@^2.2.0:
+json5@2.x, json5@^2.1.1, json5@^2.1.2, json5@^2.2.0:
   version "2.2.0"
   resolved "https://registry.npmmirror.com/json5/download/json5-2.2.0.tgz#2dfefe720c6ba525d9ebd909950f0515316c89a3"
   integrity sha1-Lf7+cgxrpSXZ69kJlQ8FFTFsiaM=
@@ -8512,6 +8513,15 @@ less-loader@^8.0.0:
   dependencies:
     klona "^2.0.4"
 
+less-plugin-aliases@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.npmmirror.com/less-plugin-aliases/download/less-plugin-aliases-1.0.3.tgz#cc233698f991c34679ab4054256ea5096dfdeeb9"
+  integrity sha1-zCM2mPmRw0Z5q0BUJW6lCW397rk=
+  dependencies:
+    find-up "^4.1.0"
+    json5 "^2.1.1"
+    less "^3.11.1"
+
 less@3.9.0:
   version "3.9.0"
   resolved "https://registry.npmmirror.com/less/download/less-3.9.0.tgz#b7511c43f37cf57dc87dffd9883ec121289b1474"
@@ -8543,6 +8553,22 @@ less@4.1.2:
     make-dir "^2.1.0"
     mime "^1.4.1"
     needle "^2.5.2"
+    source-map "~0.6.0"
+
+less@^3.11.1:
+  version "3.13.1"
+  resolved "https://registry.npmmirror.com/less/download/less-3.13.1.tgz#0ebc91d2a0e9c0c6735b83d496b0ab0583077909"
+  integrity sha512-SwA1aQXGUvp+P5XdZslUOhhLnClSLIjWvJhmd+Vgib5BFIr9lMNlQwmwUNOjXThF/A0x+MCYYPeWEfeWiLRnTw==
+  dependencies:
+    copy-anything "^2.0.1"
+    tslib "^1.10.0"
+  optionalDependencies:
+    errno "^0.1.1"
+    graceful-fs "^4.1.2"
+    image-size "~0.5.0"
+    make-dir "^2.1.0"
+    mime "^1.4.1"
+    native-request "^1.0.5"
     source-map "~0.6.0"
 
 leven@^3.1.0:
@@ -9324,6 +9350,11 @@ nanopop@^2.1.0:
   version "2.1.0"
   resolved "https://registry.npmmirror.com/nanopop/download/nanopop-2.1.0.tgz#23476513cee2405888afd2e8a4b54066b70b9e60"
   integrity sha1-I0dlE87iQFiIr9LopLVAZrcLnmA=
+
+native-request@^1.0.5:
+  version "1.1.0"
+  resolved "https://registry.npmmirror.com/native-request/download/native-request-1.1.0.tgz#acdb30fe2eefa3e1bc8c54b3a6852e9c5c0d3cb0"
+  integrity sha1-rNsw/i7vo+G8jFSzpoUunFwNPLA=
 
 natural-compare@^1.4.0:
   version "1.4.0"

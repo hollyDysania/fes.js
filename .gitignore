@@ -6,6 +6,7 @@
 .cache
 .temp
 .hound
+.mfsu
 dist
 *.log
 node_modules
